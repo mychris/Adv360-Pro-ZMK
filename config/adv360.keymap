@@ -41,6 +41,15 @@
           mods = <(MOD_LSFT|MOD_RSFT)>;
           keep-mods = <(MOD_LSFT|MOD_RSFT)>;
       };
+
+      ps: pre_shift {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <2>;
+          flavor = "balanced";
+          tapping-term-ms = <200>;
+          quick-tap-ms = <175>;
+          bindings = <&kp>, <&sl>;
+      };
     };
 
     combos {
@@ -76,6 +85,20 @@
             ;
       };
 
+      pre: pre {
+          compatible = "zmk,behavior-macro-one-param";
+	  #binding-cells = <1>;
+	  wait-ms = <20>;
+	  tap-ms = <20>;
+	  bindings
+            = <&macro_press &kp LCTRL>
+	    , <&macro_tap &kp GRAVE>
+	    , <&macro_release &kp LCTRL>
+	    , <&macro_param_1to1>
+            , <&macro_tap &kp MACRO_PLACEHOLDER>
+            ;
+      };
+
     };
 
   keymap {
@@ -84,10 +107,10 @@
     default_layer {
       display-name = "Base";
       bindings = <
- &kp EQUAL    &kp N1      &kp N2     &kp N3      &kp N4       &kp N5   &tog 1                                                   &mo 4      &kp N6   &kp N7      &kp N8        &kp N9         &kp N0           &kp MINUS
+ &kp EQUAL    &kp N1      &kp N2     &kp N3      &kp N4       &kp N5   &tog 1                                                   &mo 5      &kp N6   &kp N7      &kp N8        &kp N9         &kp N0           &kp MINUS
  &kp TAB      &kp Q       &kp W      &kp E       &kp R        &kp T    &kp PSCRN                                                &kp INS    &kp Y    &kp U       &kp I         &kp O          &kp P            &kp BSLH
  &kp ESC      &kp A       &kp S      &kp D       &kp F        &kp G    xxxxxx     &kp LCTRL  &kp LALT     &kp LGUI   &kp RCTRL  xxxxxx     &kp H    &kp J       &kp K         &kp L          &kp SEMI         &kp SQT
- &kp LSHFT    &kp Z       &kp X      &kp C       &kp V        &kp B                          &kp HOME     &kp PG_UP                        &kp N    &kp M       &kp COMMA     &kp DOT        &kp FSLH         &kp RSHFT
+ &ps LSHFT 4  &kp Z       &kp X      &kp C       &kp V        &kp B                          &kp HOME     &kp PG_UP                        &kp N    &kp M       &kp COMMA     &kp DOT        &kp FSLH         &ps RSHFT 4
  &mo 2        &kp GRAVE   &kp CAPS   &kp LEFT    &kp RIGHT             &kp BSPC   &kp DEL    &kp END      &kp PG_DN  &kp ENTER  &kp SPACE           &kp UP      &kp DOWN      &kp LBKT       &kp RBKT         &mo 2
       >;
     };
@@ -122,6 +145,17 @@
  &sca ESC     &sca A      &sca S     &sca D      &sca F       &sca G   ______     ______     ______       ______     ______     ______     &sca H   &sca J      &sca K        &sca L         &sca SEMI        &sca SQT
  ______       &sca Z      &sca X     &sca C      &sca V       &sca B                         &sca HOME    &sca PG_UP                       &sca N   &sca M      &sca COMMA    &sca DOT       &sca FSLH        ______
  ______       &sca GRAVE  ______     &sca LEFT   &sca RIGHT            &sca BSPC  &sca DEL   &sca END     &sca PG_DN &sca ENTER &sca SPACE          &sca UP     &sca DOWN     &sca LBKT      &sca RBKT        ______
+      >;
+    };
+
+    pre {
+      display-name = "Prefix";
+      bindings = <
+ &pre EQUAL   &pre N1     &pre N2    &pre N3     &pre N4      &pre N5  ______                                                   ______     &pre N6  &pre N7     &pre N8       &pre N9        &pre N0          &pre MINUS
+ &pre TAB     &pre Q      &pre W     &pre E      &pre R       &pre T   ______                                                   ______     &pre Y   &pre U      &pre I        &pre O         &pre P           &pre BSLH
+ &pre ESC     &pre A      &pre S     &pre D      &pre F       &pre G   ______     ______     ______       ______     ______     ______     &pre H   &pre J      &pre K        &pre L         &pre SEMI        &pre SQT
+ ______       &pre Z      &pre X     &pre C      &pre V       &pre B                         &pre HOME    &pre PG_UP                       &pre N   &pre M      &pre COMMA    &pre DOT       &pre FSLH        ______
+ ______       &pre GRAVE  ______     &pre LEFT   &pre RIGHT            &pre BSPC  &pre DEL   &pre END     &pre PG_DN &pre ENTER &pre SPACE          &pre UP     &pre DOWN     &pre LBKT      &pre RBKT        ______
       >;
     };
 
