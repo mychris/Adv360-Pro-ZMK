@@ -70,14 +70,14 @@
       td_LSHFT: tap_dance_lshft {
           compatible = "zmk,behavior-tap-dance";
           #binding-cells = <0>;
-          tapping-term-ms = <200>;
+          tapping-term-ms = <150>;
           bindings = <&kp LSHFT>, <&caps_word>;
       };
 
       td_RSHFT: tap_dance_rshft {
           compatible = "zmk,behavior-tap-dance";
           #binding-cells = <0>;
-          tapping-term-ms = <200>;
+          tapping-term-ms = <150>;
           bindings = <&kp RSHFT>, <&caps_word>;
       };
 
