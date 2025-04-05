@@ -12,8 +12,9 @@
 #define L_QW 0
 #define L_DV 1
 #define L_KP 2
-#define L_FN 3
-#define L_MOD 4
+#define L_SYM 3
+#define L_FN 4
+#define L_MOD 5
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS BACKSPACE LSHFT RSHFT>;
@@ -22,7 +23,6 @@
 
 &lt {
   quick-tap-ms = <200>;
-  retro-tap;
 };
 
 &sl {
@@ -60,22 +60,6 @@
           keep-mods = <(MOD_LSFT|MOD_RSFT)>;
       };
 
-      BSPC_M: mode_morph_bspc_del {
-          compatible = "zmk,behavior-mod-morph";
-	  label = "BSPC_DEL";
-          #binding-cells = <0>;
-          bindings = <&kp BSPC>, <&kp DEL>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
-
-      SPACE_M: mode_morph_space_enter {
-          compatible = "zmk,behavior-mod-morph";
-	  label = "SPACE_ENTER";
-          #binding-cells = <0>;
-          bindings = <&kp SPACE>, <&kp ENTER>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
-
       td_caps: tap_dance_caps {
           compatible = "zmk,behavior-tap-dance";
           #binding-cells = <0>;
@@ -103,7 +87,6 @@
           flavor = "tap-unless-interrupted";
           tapping-term-ms = <2000>;
           bindings = <&pre>, <&kp>;
-          
       };
 
       /* Morphs for Programmer Dvorak */
@@ -201,50 +184,71 @@
       };
     };
 
+/************************************
+      bindings = <
+ ______         ______      ______        ______      ______         ______     ______                                                           ______     ______     ______        ______        ______           ______           ______
+ ______         ______      ______        ______      ______         ______     ______                                                           ______     ______     ______        ______        ______           ______           ______
+ ______         ______      ______        ______      ______         ______     ______     ______         ______       ______     ______         ______     ______     ______        ______        ______           ______           ______
+ ______         ______      ______        ______      ______         ______                               ______       ______                               ______     ______        ______        ______           ______           ______
+ ______         ______      ______        ______      ______                    ______     ______         ______       ______     ______         ______                ______        ______        ______           ______           ______
+      >;
+************************************/
+
   keymap {
     compatible = "zmk,keymap";
 
     querty {
       display-name = "querty";
       bindings = <
- &kp EQUAL      &kp N1      &kp N2        &kp N3      &kp N4         &kp N5     &tog L_KP                                                &mo L_MOD  &kp N6     &kp N7      &kp N8        &kp N9         &kp N0           &kp MINUS
- &ht_pre N TAB  &kp Q       &kp W         &kp E       &kp R          &kp T      &kp PSCRN                                                &kp INS    &kp Y      &kp U       &kp I         &kp O          &kp P            &kp BSLH
- &ht_pre O ESC  &kp A       &kp S         &kp D       &kp F          &kp G      ______     &kp LCTRL  &kp LALT     &kp LGUI   &kp RCTRL  &to L_DV   &kp H      &kp J       &kp K         &kp L          &kp SEMI         &kp SQT
- &td_LSHFT      &kp Z       &kp X         &kp C       &kp V          &kp B                            &kp HOME     &kp PG_UP                        &kp N      &kp M       &kp COMMA     &kp DOT        &kp FSLH         &td_RSHFT
- &mo L_FN       &kp GRAVE   &td_caps      &kp LEFT    &kp RIGHT                 &BSPC_M    &mo L_KP   &kp END      &kp PG_DN  &kp ENTER  &kp SPACE             &kp UP      &kp DOWN      &kp LBKT       &kp RBKT         &mo L_FN
+ &kp EQUAL      &kp N1      &kp N2        &kp N3      &kp N4         &kp N5     &tog L_KP                                                        &mo L_MOD  &kp N6     &kp N7        &kp N8        &kp N9           &kp N0           &kp MINUS
+ &ht_pre N TAB  &kp Q       &kp W         &kp E       &kp R          &kp T      &kp PSCRN                                                        &kp INS    &kp Y      &kp U         &kp I         &kp O            &kp P            &kp BSLH
+ &ht_pre O ESC  &kp A       &kp S         &kp D       &kp F          &kp G      ______     &kp LCTRL      &kp LALT     &kp LGUI   &kp RCTRL      &to L_DV   &kp H      &kp J         &kp K         &kp L            &kp SEMI         &kp SQT
+ &td_LSHFT      &kp Z       &kp X         &kp C       &kp V          &kp B                                &kp HOME     &kp PG_UP                            &kp N      &kp M         &kp COMMA     &kp DOT          &kp FSLH         &td_RSHFT
+ &mo L_FN       &kp GRAVE   &td_caps      &kp LEFT    &kp RIGHT                 &kp BSPC   &kp SPC        &kp END      &kp PG_DN  &kp ENTER      &kp SPACE             &kp UP        &kp DOWN      &kp LBKT         &kp RBKT         &mo L_FN
       >;
     };
 
     dvorak {
       display-name = "dvorak";
       bindings = <
- &dv_EQUAL      &dv_N1      &dv_N2        &dv_N3      &dv_N4         &dv_N5     &tog L_KP                                                &mo L_MOD  &dv_N6     &dv_N7      &dv_N8        &dv_N9         &dv_N0           &dv_MINUS
- &ht_pre N TAB  &kp SEMI    &kp COMMA     &kp DOT     &kp P          &kp Y      &kp PSCRN                                                &kp INS    &kp F      &kp G       &kp C         &kp R          &kp L            &kp BSLH
- &ht_pre O ESC  &kp A       &kp O         &kp E       &kp U          &kp I      ______     &kp LCTRL  &kp LALT     &kp LGUI   &kp RCTRL  &to L_QW   &kp D      &kp H       &kp T         &kp N          &kp S            &kp MINUS
- &td_LSHFT      &kp SQT     &kp Q         &kp J       &kp K          &kp X                            &kp HOME     &kp PG_UP                        &kp B      &kp M       &kp W         &kp V          &kp Z            &td_RSHFT
- &mo L_FN       &dv_GRAVE   &td_caps      &kp LEFT    &kp RIGHT                 &BSPC_M    &mo L_KP   &kp END      &kp PG_DN  &kp ENTER  &kp SPACE             &kp UP      &kp DOWN      &kp FSLH       &dv_RBKT         &mo L_FN
+ &dv_EQUAL      &dv_N1      &dv_N2        &dv_N3      &dv_N4         &dv_N5     &tog L_KP                                                        &mo L_MOD  &dv_N6     &dv_N7        &dv_N8        &dv_N9           &dv_N0           &dv_MINUS
+ &ht_pre N TAB  &kp SEMI    &kp COMMA     &kp DOT     &kp P          &kp Y      &kp PSCRN                                                        &kp INS    &kp F      &kp G         &kp C         &kp R            &kp L            &kp BSLH
+ &ht_pre O ESC  &kp A       &kp O         &kp E       &kp U          &kp I      ______     &kp LCTRL      &kp LALT     &kp LGUI   &kp RCTRL      &to L_QW   &kp D      &kp H         &kp T         &kp N            &kp S            &kp MINUS
+ &td_LSHFT      &kp SQT     &kp Q         &kp J       &kp K          &kp X                                &kp HOME     &kp PG_UP                            &kp B      &kp M         &kp W         &kp V            &kp Z            &td_RSHFT
+ &mo L_FN       &dv_GRAVE   &td_caps      &kp LEFT    &kp RIGHT                 &kp BSPC   &lt L_KP DEL   &kp END      &kp PG_DN  &lt L_SYM RET  &kp SPACE             &kp UP        &kp DOWN      &kp FSLH         &dv_RBKT         &mo L_FN
       >;
     };
 
     keypad {
       display-name = "KP";
       bindings = <
- xxxxxx         xxxxxx      xxxxxx        xxxxxx      xxxxxx         xxxxxx     &tog L_KP                                                ______     xxxxxx     &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  xxxxxx
- &kp TAB        xxxxxx      &kp LC(LEFT)  &kp UP      &kp LC(RIGHT)  xxxxxx     ______                                                   ______     xxxxxx     &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     xxxxxx
- &tog L_KP      &kp HOME    &kp LEFT      &kp DOWN    &kp RIGHT      &kp END    ______     ______     ______       ______     ______     ______     xxxxxx     &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      xxxxxx
- ______         xxxxxx      xxxxxx        xxxxxx      xxxxxx         xxxxxx                           ______       ______                           xxxxxx     &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     ______
- ______         xxxxxx      ______        xxxxxx      xxxxxx                    ______     ______     ______       ______     ______     &KP_NZS               xxxxxx      xxxxxx        &kp KP_DOT     xxxxxx           ______
+ xxxxxx         xxxxxx      xxxxxx        xxxxxx      xxxxxx         xxxxxx     &tog L_KP                                                        ______     xxxxxx     &kp KP_EQUAL  &kp KP_DIVIDE &kp KP_MULTIPLY  xxxxxx           xxxxxx
+ &kp TAB        xxxxxx      &kp LC(LEFT)  &kp UP      &kp LC(RIGHT)  xxxxxx     ______                                                           ______     xxxxxx     &kp KP_N7     &kp KP_N8     &kp KP_N9        &kp KP_MINUS     xxxxxx
+ &tog L_KP      &kp HOME    &kp LEFT      &kp DOWN    &kp RIGHT      &kp END    ______     ______         ______       ______     ______         ______     xxxxxx     &kp KP_N4     &kp KP_N5     &kp KP_N6        &kp KP_PLUS      xxxxxx
+ ______         xxxxxx      xxxxxx        xxxxxx      xxxxxx         xxxxxx                               ______       ______                               xxxxxx     &kp KP_N1     &kp KP_N2     &kp KP_N3        &kp KP_ENTER     ______
+ ______         xxxxxx      ______        xxxxxx      xxxxxx                    ______     ______         ______       ______     ______         &kp KP_N0             xxxxxx        xxxxxx        &kp KP_DOT       xxxxxx           ______
+      >;
+    };
+
+    symbols {
+      display-name = "SYM";
+      bindings = <
+ &kp POUND      xxxxxx      xxxxxx        xxxxxx      xxxxxx         xxxxxx     xxxxxx                                                           xxxxxx     xxxxxx     xxxxxx        xxxxxx        xxxxxx           xxxxxx           xxxxxx
+ xxxxxx         &kp SEMI    &kp COMMA     &kp DOT     &kp COLON      &kp UNDER  xxxxxx                                                           xxxxxx     &kp CARET  &kp EQUAL     &kp PRCNT     &kp AMPS         &kp BSLH         xxxxxx
+ xxxxxx         &kp LT      &kp LBRC      &kp LBKT    &kp LPAR       &kp DOLLAR xxxxxx     &kp LCTRL      &kp LALT     &kp LGUI   &kp RCTRL      xxxxxx     &kp EXCL   &kp RPAR      &kp RBKT      &kp RBRC         &kp GT           xxxxxx
+ xxxxxx         &kp GRAVE   &kp APOS      &kp DQT     &kp TILDE      &kp PIPE                             xxxxxx       xxxxxx                               &kp QMARK  &kp PLUS      &kp MINUS     &kp STAR         &kp FSLH         xxxxxx
+ xxxxxx         xxxxxx      xxxxxx        xxxxxx      xxxxxx                    &kp BSPC   &kp DEL        xxxxxx       xxxxxx     xxxxxx         xxxxxx                xxxxxx        xxxxxx        xxxxxx           &kp AT           xxxxxx
       >;
     };
 
     fn {
       display-name = "Fn";
       bindings = <
- &kp F1         &kp F2      &kp F3        &kp F4      &kp F5         &kp F6     ______                                                   ______     &kp F7     &kp F8      &kp F9        &kp F10        &kp F11          &kp F12
- &kp F13        &kp F14     &kp F15       &kp F16     &kp F17        &kp F18    ______                                                   ______     &kp F19    &kp F20     &kp F21       &kp F22        &kp F23          &kp F24
- &kp K_CMENU    &tog L_KP   &tog L_KP     &tog L_KP   &tog L_KP      &tog L_KP  ______     ______     ______       ______     ______     ______     &tog L_KP  &tog L_KP   &tog L_KP     &tog L_KP      &tog L_KP        &tog L_KP
- ______         xxxxxx      &kp K_CUT     &kp K_COPY  &kp K_PASTE    xxxxxx                           ______       ______                           ______     xxxxxx      xxxxxx        xxxxxx         xxxxxx           ______
- ______         xxxxxx      ______        &kp HOME    &kp END                   &kp SPACE  &kp ENTER  ______       ______     ______     ______                &kp PG_UP   &kp PG_DN     xxxxxx         xxxxxx           ______
+ &kp F1         &kp F2      &kp F3        &kp F4      &kp F5         &kp F6     ______                                                           ______     &kp F7     &kp F8        &kp F9        &kp F10          &kp F11          &kp F12
+ &kp F13        &kp F14     &kp F15       &kp F16     &kp F17        &kp F18    ______                                                           ______     &kp F19    &kp F20       &kp F21       &kp F22          &kp F23          &kp F24
+ &kp K_CMENU    &tog L_KP   &tog L_KP     &tog L_KP   &tog L_KP      &tog L_KP  ______     ______         ______       ______     ______         ______     &tog L_KP  &tog L_KP     &tog L_KP     &tog L_KP        &tog L_KP        &tog L_KP
+ ______         xxxxxx      &kp K_CUT     &kp K_COPY  &kp K_PASTE    xxxxxx                               ______       ______                               ______     xxxxxx        xxxxxx        xxxxxx           xxxxxx           ______
+ ______         xxxxxx      ______        &kp HOME    &kp END                   &kp SPACE  &kp ENTER      ______       ______     ______         ______                &kp PG_UP     &kp PG_DN     xxxxxx           xxxxxx           ______
       >;
     };
 
