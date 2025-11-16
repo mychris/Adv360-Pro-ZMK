@@ -290,11 +290,11 @@
     fn {
       display-name = "Fn";
       bindings = <
- &kp F1         &kp F2      &kp F3        &kp F4      &kp F5         &kp F6     ______                                                           ______     &kp F7     &kp F8        &kp F9            &kp F10          &kp F11          &kp F12
- &kp F13        &kp F14     &kp F15       &kp F16     &kp F17        &kp F18    ______                                                           ______     &kp F19    &kp F20       &kp F21           &kp F22          &kp F23          &kp F24
- &kp K_CMENU    &tog L_KP   &tog L_KP     &tog L_KP   &tog L_KP      &tog L_KP  ______     ______         ______       ______     ______         ______     &tog L_KP  &tog L_KP     &tog L_KP         &tog L_KP        &tog L_KP        &tog L_KP
- ______         xxxxxx      &kp K_CUT     &kp K_COPY  &kp K_PASTE    xxxxxx                               ______       ______                               ______     xxxxxx        xxxxxx            xxxxxx           xxxxxx           ______
- ______         xxxxxx      ______        &kp HOME    &kp END                   &kp SPACE  &kp ENTER      ______       ______     ______         ______                &kp PG_UP     &kp PG_DN         xxxxxx           xxxxxx           ______
+ &kp F1         &kp F2          &kp F3           &kp F4           &kp F5            &kp F6     ______                                                           ______     &kp F7     &kp F8           &kp F9           &kp F10          &kp F11          &kp F12
+ &kp F13        &kp F14         &kp F15          &kp F16          &kp F17           &kp F18    ______                                                           ______     &kp F19    &kp F20          &kp F21          &kp F22          &kp F23          &kp F24
+ &kp K_CMENU    &tog L_KP       &tog L_KP        &tog L_KP        &tog L_KP         &tog L_KP  ______     ______         ______       ______     ______         ______     &tog L_KP  &tog L_KP        &tog L_KP        &tog L_KP        &tog L_KP        &tog L_KP
+ ______         xxxxxx          &kp K_CUT        &kp K_COPY       &kp K_PASTE       xxxxxx                               ______       ______                               ______     xxxxxx           xxxxxx           xxxxxx           xxxxxx           ______
+ ______         xxxxxx          ______           &kp HOME         &kp END                      &kp SPACE  &kp ENTER      ______       ______     ______         ______                &kp PG_UP        &kp PG_DN        xxxxxx           xxxxxx           ______
       >;
     };
 
