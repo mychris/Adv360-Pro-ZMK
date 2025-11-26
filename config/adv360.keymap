@@ -279,11 +279,11 @@
     symbols {
       display-name = "SYM";
       bindings = <
- &kp POUND      xxxxxx          xxxxxx           xxxxxx           xxxxxx            xxxxxx     xxxxxx                                                           xxxxxx     xxxxxx     xxxxxx           xxxxxx           xxxxxx           xxxxxx           xxxxxx
- xxxxxx         &kp SEMI        &kp COMMA        &kp DOT          &kp COLON         &kp UNDER  xxxxxx                                                           xxxxxx     &kp CARET  &kp EQUAL        &kp PRCNT        &kp AMPS         &kp BSLH         xxxxxx
- xxxxxx         &hml LGUI LT    &hml LALT LBRC   &hml LCTRL LBKT  &hml LSFT LPAR    &kp DOLLAR xxxxxx     ______         ______       ______     ______         xxxxxx     &kp EXCL   &hmr RSHFT RPAR  &hmr RCTRL RBKT  &hmr RALT RBRC   &hmr LGUI GT     xxxxxx
- xxxxxx         &kp GRAVE       &kp APOS         &kp DQT          &kp TILDE         &kp PIPE                             ______       ______                               &kp QMARK  &kp PLUS         &kp MINUS        &kp STAR         &kp FSLH         xxxxxx
- xxxxxx         xxxxxx          xxxxxx           xxxxxx           xxxxxx                       &kp BSPC   &kp DEL        ______       ______     xxxxxx         xxxxxx                xxxxxx           xxxxxx           xxxxxx           &kp AT           xxxxxx
+ xxxxxx         xxxxxx          xxxxxx           xxxxxx           xxxxxx            xxxxxx     xxxxxx                                                           xxxxxx     xxxxxx     xxxxxx           xxxxxx           xxxxxx           xxxxxx           xxxxxx
+ xxxxxx         &kp SEMI        &kp COMMA        &kp DOT          &kp COLON         &kp UNDER  xxxxxx                                                           xxxxxx     &kp CARET  &kp EQUAL        &kp STAR         &kp AMPS         &kp BSLH         xxxxxx
+ xxxxxx         &kp LT          &kp LBRC         &kp LBKT         &kp LPAR          &kp DOLLAR xxxxxx     ______         ______       ______     ______         xxxxxx     &kp EXCL   &kp RPAR         &kp RBKT         &kp RBRC         &kp GT           xxxxxx
+ xxxxxx         &kp GRAVE       &kp APOS         &kp DQT          &kp TILDE         &kp PIPE                             ______       ______                               &kp QMARK  &kp PLUS         &kp MINUS        &kp PRCNT        &kp FSLH         xxxxxx
+ xxxxxx         &kp POUND       xxxxxx           xxxxxx           xxxxxx                       &kp BSPC   &kp DEL        ______       ______     xxxxxx         xxxxxx                xxxxxx           xxxxxx           xxxxxx           &kp AT           xxxxxx
       >;
     };
 
