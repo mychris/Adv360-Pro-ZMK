@@ -69,13 +69,14 @@
       #include "macros.dtsi"
       #include "version.dtsi"
 
+      // For a nice introduction, see: https://precondition.github.io/home-row-mods
       hml: homerow_mods_left {
           compatible = "zmk,behavior-hold-tap";
           label = "HOMEROW_MODS_LEFT";
           flavor = "balanced";
-          tapping-term-ms = <200>;
+          tapping-term-ms = <180>; // was 200
           quick_tap_ms = <175>;
-	  require-prior-idle-ms = <120>;
+	  require-prior-idle-ms = <150>; // was 120
           #binding-cells = <2>;
           bindings = <&kp>, <&kp>;
 	  hold-trigger-key-positions = <RHS THUMBS>;
@@ -85,9 +86,9 @@
           compatible = "zmk,behavior-hold-tap";
           label = "HOMEROW_MODS_RIGHT";
           flavor = "balanced";
-          tapping-term-ms = <200>;
+          tapping-term-ms = <180>; // was 200
           quick_tap_ms = <175>;
-	  require-prior-idle-ms = <120>;
+	  require-prior-idle-ms = <150>; // was 120
           #binding-cells = <2>;
           bindings = <&kp>, <&kp>;
 	  hold-trigger-key-positions = <LHS THUMBS>;
