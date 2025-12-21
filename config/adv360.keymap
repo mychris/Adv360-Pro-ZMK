@@ -33,8 +33,8 @@
 	    54 55 56 57 58 59 \
 	    71 72 73 74 75
 
-#define THUMBS 65 66 52 67 \
-               70 69 53 68
+#define THUMBS 35 36 65 66 52 67 \
+               37 38 70 69 53 68
 
 #define ______ &trans
 #define xxxxxx &none
@@ -79,7 +79,7 @@
 	  require-prior-idle-ms = <150>; // was 120
           #binding-cells = <2>;
           bindings = <&kp>, <&kp>;
-	  hold-trigger-key-positions = <RHS THUMBS>;
+	  hold-trigger-key-positions = < RHS THUMBS >;
 	  hold-trigger-on-release;
       };
       hmr: homerow_mods_right {
@@ -91,7 +91,7 @@
 	  require-prior-idle-ms = <150>; // was 120
           #binding-cells = <2>;
           bindings = <&kp>, <&kp>;
-	  hold-trigger-key-positions = <LHS THUMBS>;
+	  hold-trigger-key-positions = < LHS THUMBS >;
 	  hold-trigger-on-release;
       };
 
@@ -280,11 +280,11 @@
     symbols {
       display-name = "SYM";
       bindings = <
- xxxxxx         xxxxxx          xxxxxx           xxxxxx           xxxxxx            xxxxxx     xxxxxx                                                           xxxxxx     xxxxxx     xxxxxx           xxxxxx           xxxxxx           xxxxxx           xxxxxx
- xxxxxx         &kp SEMI        &kp COMMA        &kp DOT          &kp COLON         &kp UNDER  xxxxxx                                                           xxxxxx     &kp CARET  &kp EQUAL        &kp STAR         &kp AMPS         &kp BSLH         xxxxxx
- xxxxxx         &kp LT          &kp LBRC         &kp LBKT         &kp LPAR          &kp DOLLAR xxxxxx     ______         ______       ______     ______         xxxxxx     &kp EXCL   &kp RPAR         &kp RBKT         &kp RBRC         &kp GT           xxxxxx
- xxxxxx         &kp GRAVE       &kp APOS         &kp DQT          &kp TILDE         &kp PIPE                             ______       ______                               &kp QMARK  &kp PLUS         &kp MINUS        &kp PRCNT        &kp FSLH         xxxxxx
- xxxxxx         &kp POUND       xxxxxx           xxxxxx           xxxxxx                       &kp BSPC   &kp DEL        ______       ______     xxxxxx         xxxxxx                xxxxxx           xxxxxx           xxxxxx           &kp AT           xxxxxx
+ &kp BSLH       &kp GRAVE       &kp LPAR         &kp RPAR         &kp SEMI          &kp COMMA  xxxxxx                                                           xxxxxx     xxxxxx     xxxxxx           xxxxxx           xxxxxx           xxxxxx           xxxxxx
+ &kp EXCL       &kp LBRC        &kp APOS         &kp DQT          &kp RBRC          &kp QMARK  xxxxxx                                                           xxxxxx     &kp SEMI   xxxxxx           xxxxxx           xxxxxx           xxxxxx           xxxxxx
+ &kp POUND      &kp CARET       &kp EQUAL        &kp UNDERSCORE   &kp DOLLAR        &kp STAR   xxxxxx     &kp PERCENT    xxxxxx       ______     ______         xxxxxx     &kp DOT    &kp BSPC         &kp TAB          &kp SPACE        &kp ENTER        xxxxxx
+ &kp TILDE      &kp LT          &kp PIPE         &kp MINUS        &kp GT            &kp FSLH                             xxxxxx       ______                               &kp FSLH   &kp DEL          &kp LS(TAB)      xxxxxx           xxxxxx           xxxxxx
+ &kp AT         &kp AMPS        &kp LBKT         &kp RBKT         &kp PLUS                     &kp DOT    &kp COLON      &kp SEMI     ______     xxxxxx         xxxxxx                &kp LPAR         &kp LBKT         &kp RBKT         &kp RPAR         xxxxxx
       >;
     };
 
